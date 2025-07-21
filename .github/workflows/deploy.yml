@@ -1,9 +1,9 @@
-name: Deploy to Netlify
+name: Deploy Static Site to Netlify
 
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   deploy:
@@ -16,13 +16,15 @@ jobs:
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
 
-      - name: Deploy to Netlify (excluding README.md)
+      - name: Copy site files excluding README.md
+        run: |
+          mkdir temp_deploy
+          shopt -s extglob
+          rsync -av --exclude='README.md' --exclude='temp_deploy' ./ temp_deploy/
+
+      - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          mkdir deploy
-          shopt -s extglob
-          cp -r !(README.md|.git|.github|node_modules) deploy/
-          netlify deploy --dir=deploy --prod
+        run: netlify deploy --dir=temp_deploy --prod
 
