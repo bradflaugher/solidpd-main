@@ -1,417 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Solid Product Design - Expert hardware product design and engineering services. Thoughtful, systematic approach to bringing your product ideas to life.">
     <meta name="keywords" content="product design, hardware engineering, industrial design, prototyping, product development">
-    <title>Solid Product Design - Expert Hardware Product Design & Engineering</title>
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            background: rgba(30, 58, 138, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1e3a8a;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-        
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-        
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #1e3a8a;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3a8a;
-        }
-        
-        /* About Section */
-        .about {
-            background: #f8fafc;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .about-text h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .about-image {
-            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
-            height: 300px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-size: 1.2rem;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: #1e3a8a;
-            color: white;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(5px);
-        }
-        
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: white;
-            color: #1e3a8a;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #1e3a8a;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu {
-                display: flex;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-        }
-    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://solidpd.com">
+
+    <meta property="og:title" content="Solid Product Design - Expert Hardware Product Design & Engineering">
+    <meta property="og:description" content="Expert hardware product design and engineering services. Thoughtful, systematic approach to bringing your product ideas to life.">
+    <meta property="og:image" content="https://solidpd.com/images/logo-horizontal-white.png">
+    <meta property="og:url" content="https://solidpd.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solid Product Design - Expert Hardware Product Design & Engineering">
+    <meta name="twitter:description" content="Expert hardware product design and engineering services. Thoughtful, systematic approach to bringing your product ideas to life.">
+    <meta name="twitter:image" content="https://solidpd.com/images/logo-horizontal-white.png">
+    
+    <title>Solid Product Design - Expert Hardware Design & Engineering</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header">
         <nav class="container">
-            <div class="logo">
-                <div class="logo-icon">S</div>
-                <span>Solid Product Design</span>
-            </div>
+            <a href="#home" class="logo">
+                <img src="images/logo-horizontal-white.png" alt="Solid Product Design Logo">
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -425,13 +51,14 @@
             </div>
         </nav>
     </header>
+    <main>
 
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Expert Hardware Product Design</h1>
                 <p class="subtitle">Thoughtful, systematic engineering solutions that bring your product ideas to life</p>
-                <a href="#contact" class="cta-button">Start Your Project</a>
+                <a href="https://calendar.app.google/HwNKaaJmsS37Bh4a9" target="_blank" class="cta-button">Start Your Project</a>
             </div>
         </div>
     </section>
@@ -446,8 +73,19 @@
                     <p>Formerly NextFab Product Development, we've rebranded to better reflect our core mission: delivering solid, reliable product design solutions that stand the test of time.</p>
                     <p>With years of experience in hardware engineering, prototyping, and product development, we bring the same expertise and dedication to every project under our new identity.</p>
                 </div>
-                <div class="about-image fade-in">
-                    <span>Product Development Workspace</span>
+                <div class="carousel-container fade-in">
+                    <div class="carousel-slide">
+                        <img src="images/index-carousel/baleena_product.png" alt="Baleena smart water monitor product">
+                        <img src="images/index-carousel/dual_exploded_view.png" alt="Exploded view of a dual-part product assembly">
+                        <img src="images/index-carousel/laminitis_device.png" alt="Wearable device for laminitis detection in horses">
+                        <img src="images/index-carousel/measure_device.png" alt="Handheld device for precise measurements">
+                        <img src="images/index-carousel/product_components.png" alt="Various components of a hardware product">
+                        <img src="images/index-carousel/rx_wear_components.png" alt="Components of a wearable prescription device">
+                    </div>
+                    <div class="carousel-nav">
+                        <button id="prevBtn">❮</button>
+                        <button id="nextBtn">❯</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -493,51 +131,54 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Get In Touch</h2>
-            <div class="contact-content">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content-centered">
                 <div class="contact-info fade-in">
                     <h3>Ready to Start Your Project?</h3>
-                    <p>Let's discuss how we can bring your product ideas to life with our systematic, thoughtful approach to hardware design and engineering.</p>
-                    
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <div>
-                            <strong>Email</strong><br>
-                            TBC 
+                    <p>Let's discuss how we can bring your product ideas to life. Schedule a free consultation call with our expert team.</p>
+                    <a href="https://calendar.app.google/HwNKaaJmsS37Bh4a9" target="_blank" class="cta-button schedule-call-btn">
+                        Schedule a Call
+                    </a>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <div>
+                                <strong>Email</strong><br>
+                                <a href="mailto:hello@solidpd.com">hello@solidpd.com</a>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <div>
-                            <strong>Location</strong><br>
-                            Philadelphia, PA
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <div>
+                                <strong>Address</strong><br>
+                                2212 Walnut Street, 1st Floor<br>
+                                Philadelphia, PA 19103
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="project">Project Description</label>
-                        <textarea id="project" name="project" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
 
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Solid Product Design. All rights reserved. | Thoughtful, systematic hardware product design and engineering.</p>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="images/logo-stacked-white.png" alt="Solid Product Design Logo">
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/solidpd/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2024 Solid Product Design. All rights reserved. | Thoughtful, systematic hardware product design and engineering.</p>
         </div>
     </footer>
 
@@ -553,7 +194,7 @@
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -571,69 +212,50 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                navLinks.classList.remove('active');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             });
         });
 
         // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const project = formData.get('project');
-            
-            // Simple validation
-            if (!name || !email || !project) {
-                alert('Please fill in all fields.');
-                return;
-            }
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Thank you for your message! We\'ll get back to you soon.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
+        // Carousel functionality
+        const slide = document.querySelector('.carousel-slide');
+        const images = document.querySelectorAll('.carousel-slide img');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
-        // Add some interactive hover effects
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
+        if (slide) {
+            let currentIndex = 0;
+            const totalImages = images.length;
+
+            function updateCarousel() {
+                slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalImages;
+                updateCarousel();
             });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                updateCarousel();
             });
-        });
+        }
     </script>
 </body>
 </html>
