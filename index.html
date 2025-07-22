@@ -178,7 +178,7 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
-            <p class="copyright">&copy; 2024 Solid Product Design. All rights reserved. | Thoughtful, systematic hardware product design and engineering.</p>
+            <p class="copyright">&copy; <span id="copyright-year"></span> Solid Product Design. All rights reserved. | Thoughtful, systematic hardware product design and engineering.</p>
         </div>
     </footer>
 
@@ -256,6 +256,9 @@
                 updateCarousel();
             });
         }
+
+        // Set copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
