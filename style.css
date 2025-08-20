@@ -1,21 +1,15 @@
-/* Minimal splash styles for Solid Product Design */
-:root{--bg:#0b1020;--bg2:#0e1630;--accent:#4fd1c5;--text:#e6eefc;--muted:#a6b0c5;}
+/* Ultra-minimal splash styles for Solid Product Design */
+:root{--bg:#037CCC;--accent:#ffffff;--text:#ffffff;--muted:#e8f4ff}
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 800px at 10% 10%,#142047 0%,transparent 60%),radial-gradient(1000px 700px at 90% 20%,#1a2b64 0%,transparent 55%),linear-gradient(160deg,var(--bg),var(--bg2));color:var(--text);}
-.splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;position:relative;overflow:hidden}
-.wrap{width:100%;max-width:920px;text-align:center;padding:40px 28px;border-radius:20px;background:rgba(255,255,255,0.05);backdrop-filter:blur(8px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.logo{width:min(520px,80vw);height:auto;display:block;margin:0 auto 28px}
-h1{font-family:"Quicksand",sans-serif;letter-spacing:.2px;margin:0 0 8px;font-size:clamp(28px,5vw,44px)}
-.tagline{margin:0 auto 26px;max-width:720px;color:var(--muted);font-size:clamp(16px,2.4vw,18px)}
-.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:22px 0 10px}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .2s ease;}
-.btn.primary{background:var(--accent);color:#042b2a;box-shadow:0 8px 24px rgba(79,209,197,.35)}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(79,209,197,.45)}
-.btn.ghost{border:1px solid rgba(230,238,252,.25);color:var(--text)}
-.btn.ghost:hover{border-color:rgba(230,238,252,.5);transform:translateY(-2px)}
-.info{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:22px 0 0}
-.info-item{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(230,238,252,.25);padding-bottom:2px}
-.info-item:hover{color:var(--text);border-bottom-color:var(--text)}
-.footer{margin-top:26px;color:#8ea0c7;font-size:13px}
-@media (max-width:520px){.wrap{padding:28px 22px;border-radius:16px}.logo{margin-bottom:18px}.actions{gap:10px}.btn{padding:11px 16px;border-radius:10px}}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:48px 20px;text-align:center}
+.logo{width:min(360px,72vw);height:auto;display:block;margin:0 auto 6px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;letter-spacing:.2px;transition:transform .15s ease}
+.btn.primary{background:var(--text);color:#0a4f7a}
+.btn.primary:hover{transform:translateY(-1px)}
+.info{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:6px;font-size:15px}
+.info-item{color:var(--muted);text-decoration:none}
+.info-item:hover{color:var(--text)}
+.separator{opacity:.6;color:var(--muted)}
