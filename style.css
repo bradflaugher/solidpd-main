@@ -13,3 +13,13 @@ body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Helv
 .info-item{color:var(--muted);text-decoration:none}
 .info-item:hover{color:var(--text)}
 .separator{opacity:.6;color:var(--muted)}
+
+/* Icon styling inside info links */
+.info-item{display:inline-flex;align-items:center}
+.info-item .icon{width:16px;height:16px;margin-right:6px;flex:0 0 auto}
+
+/* Improve mobile layout by removing dot separators on small screens */
+@media (max-width:640px){
+  .separator{display:none}
+}
+
