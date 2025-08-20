@@ -26,7 +26,186 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* CSS Variables */
+    :root {
+      --bg: #037CCC;
+      --accent: #ffffff;
+      --text: #ffffff;
+      --muted: #e8f4ff;
+    }
+
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Main Layout */
+    .splash {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: min(360px, 72vw);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      transition: all 0.2s ease;
+      font-size: 16px;
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: #0a4f7a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Info Section - Improved Layout */
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+      font-size: 15px;
+      max-width: 600px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .info-item {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+    }
+
+    .info-item:hover {
+      color: var(--text);
+    }
+
+    /* Separator Dots */
+    .separator {
+      color: var(--muted);
+      opacity: 0.6;
+      font-size: 12px;
+      user-select: none;
+    }
+
+    /* Icon Styling */
+    .info-item .icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 768px) {
+      .splash {
+        gap: 24px;
+        padding: 32px 16px;
+      }
+
+      .logo {
+        width: min(280px, 80vw);
+      }
+
+      .btn {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+
+      .info {
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .info-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .separator {
+        display: none;
+      }
+
+      .info-item {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .splash {
+        padding: 24px 12px;
+      }
+
+      .logo {
+        width: min(240px, 85vw);
+      }
+
+      .info {
+        font-size: 13px;
+      }
+    }
+
+    /* High DPI Display Support */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .btn.primary {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .btn.primary:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="splash">
@@ -35,9 +214,17 @@
     <a class="btn primary" href="https://calendar.app.google/HwNKaaJmsS37Bh4a9" target="_blank" rel="noopener">Schedule a Call</a>
 
     <div class="info">
-      <a class="info-item" href="mailto:hello@solidpd.com">hello@solidpd.com</a>
-      <a class="info-item" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</a>
-      <a class="info-item icon-only" href="https://www.linkedin.com/company/solidpd/" target="_blank" rel="noopener" aria-label="Solid Product Design on LinkedIn"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.943v5.665H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.602 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.997 20.452H3.675V9h3.322v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <div class="info-row">
+        <a class="info-item" href="mailto:hello@solidpd.com">hello@solidpd.com</a>
+        <span class="separator">•</span>
+        <a class="info-item" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</a>
+        <span class="separator">•</span>
+        <a class="info-item" href="https://www.linkedin.com/company/solidpd/" target="_blank" rel="noopener" aria-label="Solid Product Design on LinkedIn">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.943v5.665H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.602 0 4.268 2.371 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.997 20.452H3.675V9h3.322v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </main>
 </body>
