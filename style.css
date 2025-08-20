@@ -9,7 +9,36 @@ body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Helv
 .btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;letter-spacing:.2px;transition:transform .15s ease}
 .btn.primary{background:var(--text);color:#0a4f7a}
 .btn.primary:hover{transform:translateY(-1px)}
-.info{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:6px;font-size:15px}
+.info{display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin-top:6px;font-size:15px}
 .info-item{color:var(--muted);text-decoration:none}
 .info-item:hover{color:var(--text)}
 .separator{opacity:.6;color:var(--muted)}
+/* CSS-only separators */
+.info-item{position:relative;padding:0 10px;display:inline-flex;align-items:center}
+.info-item + .info-item{margin-left:10px}
+.info-item + .info-item:before{content:"\2022";position:relative;left:-10px;color:var(--muted);opacity:.6}
+/* Remove extra padding on first and last items */
+.info .info-item:first-child{padding-left:0}
+.info .info-item:last-child{padding-right:0}
+
+/* Icon-only LinkedIn */
+.info-item.icon-only{padding-left:10px;padding-right:0}
+.info-item.icon-only .icon{width:16px;height:16px;margin:0}
+
+/* Mobile: stack items nicely and hide separators */
+@media (max-width:640px){
+  .info{gap:8px}
+  .info-item{padding:0}
+  .info-item + .info-item{margin-left:0}
+  .info-item + .info-item:before{content:none}
+}
+
+
+/* Icon styling inside info links */
+.info-item .icon{width:16px;height:16px;margin-right:6px;flex:0 0 auto}
+
+/* Improve mobile layout by removing dot separators on small screens */
+@media (max-width:640px){
+  .separator{display:none}
+}
+
