@@ -128,13 +128,13 @@
       margin-top: 8px;
     }
 
-    /* Contact Row - Horizontal layout for desktop */
+    /* Contact Row - Vertical layout */
     .contact-row {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .contact-item {
@@ -178,14 +178,7 @@
       text-align: center;
     }
 
-    /* Separator for desktop */
-    .separator {
-      color: var(--text-secondary);
-      opacity: 0.5;
-      font-size: 12px;
-      user-select: none;
-      margin: 0 4px;
-    }
+
 
     /* LinkedIn icon styling - separate row but closer */
     .linkedin-row {
@@ -244,16 +237,7 @@
         width: 100%;
       }
 
-      /* Stack vertically on mobile */
-      .contact-row {
-        flex-direction: column !important;
-        gap: 12px !important;
-        align-items: center;
-      }
 
-      .separator {
-        display: none !important;
-      }
 
       .contact-item {
         font-size: 14px;
@@ -368,14 +352,12 @@
 
     <div class="contact-section">
       <div class="contact-row">
-        <a class="contact-item" href="mailto:hello@solidpd.com">
-          <span>hello@solidpd.com</span>
+        <a class="contact-item address" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">
+          <span>2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</span>
         </a>
         
-        <span class="separator">•</span>
-        
-        <a class="contact-item address" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">
-          <span>2212 Walnut Street, Philadelphia, PA 19103</span>
+        <a class="contact-item" href="mailto:hello@solidpd.com">
+          <span>hello@solidpd.com</span>
         </a>
       </div>
       
