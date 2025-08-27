@@ -173,9 +173,17 @@
       width: 100%;
     }
 
-    /* Address styling - single line on desktop */
+    /* Address styling - two lines */
     .contact-item.address {
       text-align: center;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .address-line1,
+    .address-line2 {
+      display: block;
+      line-height: 1.3;
     }
 
 
@@ -353,7 +361,8 @@
     <div class="contact-section">
       <div class="contact-row">
         <a class="contact-item address" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">
-          <span>2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</span>
+          <span class="address-line1">2212 Walnut Street, 1st Floor</span>
+          <span class="address-line2">Philadelphia, PA 19103</span>
         </a>
         
         <a class="contact-item" href="mailto:hello@solidpd.com">
