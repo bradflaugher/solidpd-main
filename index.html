@@ -128,13 +128,13 @@
       margin-top: 8px;
     }
 
-    /* Contact Row - Horizontal layout on desktop */
+    /* Contact Row - Horizontal layout for email and linkedin */
     .contact-row {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 0;
+      gap: 24px;
       flex-wrap: wrap;
     }
 
@@ -148,19 +148,9 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 8px 16px;
+      padding: 8px 12px;
       position: relative;
       white-space: nowrap;
-    }
-
-    /* Add separators between contact items on desktop */
-    .contact-item:not(:last-child)::after {
-      content: '•';
-      position: absolute;
-      right: -16px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 12px;
-      pointer-events: none;
     }
 
     .contact-item:hover {
@@ -255,11 +245,6 @@
         white-space: normal;
         text-align: center;
         padding: 6px 0;
-      }
-
-      /* Hide separators on mobile */
-      .contact-item:not(:last-child)::after {
-        display: none;
       }
 
       .contact-item.address {
@@ -364,11 +349,11 @@
     </div>
 
     <div class="contact-section">
+      <a class="contact-item address" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">
+        <span>2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</span>
+      </a>
+      
       <div class="contact-row">
-        <a class="contact-item address" href="https://maps.google.com/?q=2212%20Walnut%20Street,%201st%20Floor,%20Philadelphia,%20PA%2019103" target="_blank" rel="noopener">
-          <span>2212 Walnut Street, 1st Floor, Philadelphia, PA 19103</span>
-        </a>
-        
         <a class="contact-item email" href="mailto:hello@solidpd.com">
           <span>hello@solidpd.com</span>
         </a>
