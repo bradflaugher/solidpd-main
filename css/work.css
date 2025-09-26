@@ -1,0 +1,131 @@
+/* Import main styles */
+@import url('./main.css');
+
+/* Work Page Specific Styles */
+.work-hero {
+    background: #666;
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+}
+
+.work-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.work-hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.work-hero h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.work-hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    opacity: 0.9;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    background: #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Navigation active state */
+.nav-menu a.active {
+    color: #4A90E2;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .work-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .work-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .work-hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+}
