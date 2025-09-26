@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+        run: npm install -g netlify-cli @netlify/edge-functions-bootstrap
 
       - name: Copy site files excluding README.md
         run: |
