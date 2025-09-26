@@ -2,7 +2,36 @@
 
 A professional website for Solid Product Design built with React, Vite, and Tailwind CSS, optimized for static hosting on Netlify.
 
-## 🚀 Live Site
+## 📖 New to React Development?
+
+**👋 Start here!** Check out our [**Comprehensive Development Guide**](./DEVELOPMENT_GUIDE.md) for step-by-step instructions, even if you've never used React before.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ ([Download here](https://nodejs.org/))
+- Git ([Download here](https://git-scm.com/))
+
+### Get Started in 3 Steps
+
+1. **Clone and setup**:
+   ```bash
+   git clone https://github.com/bradflaugher/solidpd-main.git
+   cd solidpd-main
+   npm install -g pnpm  # Install pnpm if you don't have it
+   pnpm install         # Install dependencies
+   ```
+
+2. **Start development**:
+   ```bash
+   pnpm run dev
+   ```
+
+3. **Open in browser**: Go to `http://localhost:5173/`
+
+That's it! The website will automatically reload when you make changes.
+
+## 🌐 Live Site
 
 - **Production**: [solidpd.com](https://solidpd.com) (from `main` branch)
 - **Development**: Auto-deployed preview from any non-main branch
@@ -165,12 +194,40 @@ The website uses a consistent design system with:
 
 This project is proprietary and confidential. All rights reserved by Solid Product Design.
 
+## 🐛 Quick Troubleshooting
+
+**"Command not found: pnpm"**
+```bash
+npm install -g pnpm
+```
+
+**"Port already in use"**
+```bash
+pnpm run dev --port 3000
+```
+
+**Build errors**
+```bash
+pnpm run lint  # Check for errors
+```
+
+**Need more help?** See the [Development Guide](./DEVELOPMENT_GUIDE.md) for comprehensive troubleshooting.
+
+## 📚 Learning Resources
+
+- **New to React?** → [Development Guide](./DEVELOPMENT_GUIDE.md) (start here!)
+- **React Tutorial** → [reactjs.org/tutorial](https://reactjs.org/tutorial/tutorial.html)
+- **Tailwind CSS** → [tailwindcss.com/docs](https://tailwindcss.com/docs)
+
 ## 📞 Support
 
 For questions or support, please contact:
-- Email: info@solidpd.com
-- Website: [solidpd.com](https://solidpd.com)
+- **Email**: info@solidpd.com
+- **Website**: [solidpd.com](https://solidpd.com)
+- **Development Issues**: Check the [Development Guide](./DEVELOPMENT_GUIDE.md)
 
 ---
+
+**🎯 Ready to start?** Run `pnpm run dev` and start coding!
 
 Built with ❤️ by the Solid Product Design team
