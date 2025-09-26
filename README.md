@@ -1,94 +1,176 @@
 # Solid Product Design Website
 
-A modern, responsive static website for Solid Product Design - expert hardware product design and engineering services.
+A professional website for Solid Product Design built with React, Vite, and Tailwind CSS, optimized for static hosting on Netlify.
 
-## Overview
+## 🚀 Live Site
 
-This repository contains the source code for the Solid Product Design website, featuring:
+- **Production**: [solidpd.com](https://solidpd.com) (from `main` branch)
+- **Development**: Auto-deployed preview from any non-main branch
 
-- **Modern Design**: Clean, professional layout with smooth animations
-- **Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Performance**: Single HTML file with inline CSS and JavaScript for fast loading
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Contact Form**: Interactive contact form with validation
-- **Smooth Navigation**: Animated scrolling between sections
+## 🛠️ Tech Stack
 
-## Features
+- **Frontend**: React 18 + Vite
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **Deployment**: Netlify (via GitHub Actions)
+- **Build Output**: Static files in `dist/` directory
 
-- Hero section with call-to-action
-- About section explaining the company story
-- Services showcase with 6 key service areas
-- Contact section with form and company information
-- Mobile-responsive navigation menu
-- Smooth scroll animations and hover effects
+## 📁 Project Structure
 
-## Technology Stack
+```
+src/
+├── components/
+│   ├── Navigation.jsx      # Header navigation
+│   ├── Footer.jsx          # Footer component
+│   └── ui/                 # shadcn/ui components
+├── pages/
+│   ├── Home.jsx            # Homepage
+│   ├── Work.jsx            # Portfolio page
+│   ├── About.jsx           # About us page
+│   ├── Services.jsx        # Services page
+│   └── Contact.jsx         # Contact page
+├── App.jsx                 # Main app component
+├── App.css                 # Global styles
+└── main.jsx               # Entry point
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with flexbox/grid, animations, and responsive design
-- **Vanilla JavaScript**: Interactive features and form handling
-- **No Dependencies**: Self-contained single file for easy deployment
+dist/                       # Static build output
+├── index.html             # Main HTML file
+├── assets/                # CSS and JS bundles
+├── _redirects            # Netlify routing config
+└── *.png, *.ico          # Favicon and assets
+```
 
-## Deployment
+## 🎨 Features
 
-This site is designed to be deployed on Netlify with automatic GitHub Actions integration.
+- **Responsive Design** - Works on all devices
+- **Modern UI Components** - Built with shadcn/ui
+- **Smooth Animations** - Hover effects and transitions
+- **SEO Optimized** - Meta tags, sitemap, robots.txt
+- **Performance Optimized** - Built with Vite for fast loading
+- **Static Site** - Fully static output for CDN hosting
 
-### Quick Deploy to Netlify
+## 🏃‍♂️ Development
 
-1. Fork this repository
-2. Connect your GitHub account to Netlify
-3. Create a new site from Git and select this repository
-4. Deploy settings:
-   - Build command: (leave empty)
-   - Publish directory: `/` (root)
-5. Deploy!
+### Prerequisites
+- Node.js 18+
+- pnpm (recommended) or npm
 
-### Custom Domain Setup
+### Getting Started
 
-To use your custom domain (solidpd.com):
-
-1. In Netlify dashboard, go to Site Settings > Domain Management
-2. Add custom domain: `solidpd.com`
-3. Configure DNS records in your domain provider (GoDaddy):
-   - Add CNAME record: `www` → `your-site-name.netlify.app`
-   - Add A record: `@` → Netlify's IP addresses
-
-## Development
-
-To run locally:
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Or serve with a local server:
+1. **Clone the repository**
    ```bash
-   python -m http.server 8000
-   # or
-   npx serve .
+   git clone https://github.com/bradflaugher/solidpd.com.git
+   cd solidpd.com
    ```
 
-## File Structure
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
+3. **Start development server**
+   ```bash
+   pnpm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   pnpm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   pnpm run preview
+   ```
+
+## 📦 Available Scripts
+
+- `pnpm run dev` - Start development server
+- `pnpm run build` - Build static files for production
+- `pnpm run preview` - Preview production build locally
+- `pnpm run lint` - Run ESLint
+
+## 🚀 Deployment
+
+### Automatic Deployment (GitHub Actions)
+
+The site is automatically deployed via GitHub Actions:
+
+- **`main` branch** → Production deployment to solidpd.com
+- **Any other branch** → Development preview deployment
+
+### Manual Deployment
+
+If you need to deploy manually to Netlify:
+
+```bash
+# Build the project
+pnpm run build
+
+# Deploy to Netlify (requires Netlify CLI)
+netlify deploy --dir=dist --prod
 ```
-solidpd-site/
-├── index.html          # Main website file
-├── README.md           # This file
-├── .gitignore         # Git ignore rules
-└── .github/
-    └── workflows/
-        └── deploy.yml  # GitHub Actions workflow
-```
 
-## Contact Information
+### Netlify Configuration
 
-- **Email**: hello@solidpd.com
-- **Phone**: (555) 123-4567
-- **Location**: Philadelphia, PA
+The site includes:
+- `netlify.toml` - Build and deployment configuration
+- `public/_redirects` - SPA routing configuration
+- Security headers and caching rules
 
-## License
+## 🎯 Pages
 
-© 2025 Solid Product Design. All rights reserved.
+- **Homepage** (`/`) - Hero section, company overview, statistics, expertise
+- **Work** (`/work`) - Portfolio showcase with case studies
+- **About** (`/about`) - Company story, team, expertise
+- **Services** (`/services`) - Service offerings and packages
+- **Contact** (`/contact`) - Contact form and information
+
+## 🎨 Design System
+
+The website uses a consistent design system with:
+
+- **Colors**: Gray scale with blue accents
+- **Typography**: Clean, professional fonts
+- **Spacing**: Consistent padding and margins
+- **Components**: Reusable UI components
+- **Animations**: Subtle hover effects and transitions
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🔧 Static Site Features
+
+- **SPA Routing**: Client-side routing with fallback to index.html
+- **Asset Optimization**: Minified CSS and JS bundles
+- **CDN Ready**: Optimized for CDN distribution
+- **SEO Friendly**: Proper meta tags and structured data
+- **Performance**: Lighthouse score optimized
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary and confidential. All rights reserved by Solid Product Design.
+
+## 📞 Support
+
+For questions or support, please contact:
+- Email: info@solidpd.com
+- Website: [solidpd.com](https://solidpd.com)
 
 ---
 
-**Note**: This is a placeholder website. Update contact information, content, and styling as needed for your specific requirements.
-
+Built with ❤️ by the Solid Product Design team
